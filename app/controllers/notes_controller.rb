@@ -1,10 +1,11 @@
 class NotesController < ApplicationController
+  before_action :set_note, only: [:show, :edit, :update, :destroy]
   def index
     @notes = Note.all
   end
 
   def show
-    @note = set_note
+    # @note = set_note
   end
 
   def new
@@ -21,19 +22,19 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @note = set_note
+    # @note = set_note
   end
 
   def update
-    @note = set_note
+    # @note = set_note
     @note.update(note_params)
     redirect_to note_path(@note)
   end
 
   def destroy
-    @note = set_note
+    # @note = set_note
     @note.destroy
-    redirect_to notes_path, notice: "Note was successfully deleted"
+    redirect_to root_path, notice: "Note was successfully deleted"
   end
 
   private

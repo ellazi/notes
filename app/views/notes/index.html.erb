@@ -2,3 +2,4 @@
 <% @notes.each do |note| %>
   <%= link_to note.title, note_path(note) %>
 <% end %>
+<%= link_to "New note", new_note_path %>
