@@ -7,17 +7,33 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
+User.destroy_all
 Note.destroy_all
+
+puts "Creating users..."
+
+6.times do |i|
+  letter = ('a'..'z').to_a[i]
+  User.create!(
+    name: Faker::Name.name,
+    email: "#{letter}@notes.com",
+    password: "111111"
+  )
+end
+
+puts "Created #{User.count} users"
 
 puts "Creating notes..."
 
-16.times do
-  note = Note.new(
-    title: Faker::Tea.variety,
-    content: Faker::Lorem.paragraph(sentence_count: 20)
-  )
-  note.save!
-  puts "Note #{note.title} created"
+User.all.each do |user|
+  rand(2..8).times do |i|
+    note = Note.new(
+      title: Faker::Tea.variety,
+      content: Faker::Lorem.paragraph(sentence_count: 20),
+      user_id: user.id
+    )
+    note.save!
+  end
 end
 
 puts "Created #{Note.count} notes."
