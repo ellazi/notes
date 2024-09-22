@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   def index
-    @notes = Note.all
+    @notes = current_user.notes
   end
 
   def show
@@ -13,7 +13,8 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.new(note_params)
+    # @note = Note.new(note_params)
+    @note = current_user.notes.build(note_params)
     if @note.save
       redirect_to note_path(@note)
     else
@@ -34,7 +35,7 @@ class NotesController < ApplicationController
   def destroy
     # @note = set_note
     @note.destroy
-    redirect_to root_path, notice: "Note was successfully deleted"
+    redirect_to notes_path, notice: "Note was successfully deleted"
   end
 
   private
@@ -44,6 +45,8 @@ class NotesController < ApplicationController
   end
 
   def set_note
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to notes_path, alert: "Note not found."
   end
 end

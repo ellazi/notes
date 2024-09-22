@@ -1,3 +1,14 @@
 <div class="navbar">
-  <%= link_to "All Notes", root_path %>
+  <%= link_to "Home", root_path %>
+  <div class="buttons-box">
+    <% if user_signed_in? %>
+      <a href="<%= notes_path %>" title="All notes">All notes</a>
+      <a href="<%= new_note_path %>" title="Add note">Add note</a>
+      <a href="<%= edit_user_registration_path %>" title="Edit profile">Edit profile</a>
+      <a href="<%= destroy_user_session_path %>" data-turbo-method="delete" title="Log out"><i class="fa-solid fa-right-from-bracket fa-lg"></i></a>
+    <% else %>
+      <%= link_to "Log in", new_user_session_path, class: "btn-nav" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn-nav" %>
+    <% end %>
+  </div>
 </div>
