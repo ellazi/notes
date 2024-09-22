@@ -1,0 +1,63 @@
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Define fonts for body and headers
+$body-font: "Poppins", sans-serif;
+$headers-font: "Lora", serif; 
+
+body, p {
+  font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headers-font;
+}
+
+h1 {
+  font-size: 96px;
+  line-height: 80px;
+  margin-bottom: 150px;
+}
+
+h2 {
+  font-size: 64px;
+  line-height: 60px;
+  margin-bottom: 90px;
+}
+
+// Define links style
+a {
+  text-decoration: none !important;
+  color: #9b9b9b;
+  p {
+    color: #3a3a3a;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #3a3a3a;
+  }
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #000;
+  p {
+    color: #3a3a3a;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #3a3a3a;
+  }
+}
+
+@media (max-width: 540px) {
+  h1 {
+    font-size: 72px;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 300px) {
+  h1 {
+    font-size: 64px;
+    line-height: 50px;
+  }
+}

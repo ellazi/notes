@@ -1,0 +1,23 @@
+.grid-card {
+  width: 32%;
+  height: 100px;
+  // border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 19px 0px;
+  color: #000;
+  background: linear-gradient(65deg, rgba(252,245,194,1) 0%, rgba(197,222,203,1) 100%);
+}
+
+.grid-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.grid-card:hover {
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 19px 0px;
+  background: linear-gradient(65deg, rgba(211,149,155,1) 0%, rgba(176,218,185,1) 100%);
+  font-weight: bold;
+}

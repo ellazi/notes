@@ -1,5 +1,7 @@
 <h1>All my notes</h1>
-<% @notes.each do |note| %>
-  <%= link_to note.title, note_path(note) %>
-<% end %>
+<div class="full-page-grid">
+  <% @notes.each do |note| %>
+    <%= link_to note.title, note_path(note), class: "grid-card" %>
+  <% end %>
+</div>
 <%= link_to "New note", new_note_path %>

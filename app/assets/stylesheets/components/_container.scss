@@ -1,0 +1,20 @@
+.main-container {
+  max-width: 900px !important;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.full-page-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
+}
+
+@media (max-width: 720px) {
+  .main-container {
+    width: 90%;
+  }
+}
